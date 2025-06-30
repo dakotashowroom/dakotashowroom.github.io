@@ -46,13 +46,14 @@ refactor: true
     {% assign posts = posts | push: all_normal[i] %}
   {% endfor %}
 {% endif %}
-            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
+  {% for post in posts %}
+              <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>{{ post.content }}</p>
             </div>
-<div id="post-list" class="flex-grow-1 px-xl-1">
-  {% for post in posts %}
     <article class="card-wrapper card">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         {% assign card_body_col = '12' %}
